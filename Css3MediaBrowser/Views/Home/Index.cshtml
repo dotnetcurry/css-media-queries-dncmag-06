@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Css3MediaBrowser.Models.TweetViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Twitter Image Browser</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel='stylesheet' media='only screen and (min-width: 481px)' href='~/Styles/media-browser-hd.css' />
+    <link rel='stylesheet' media='only screen and (max-width: 480px)' href='~/Styles/media-browser-mobile.css' />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+        <h3>Get Recent Tweets by
+            <input id="screenName" type="text" name="screenName" />
+            <input id="submitButton" type="submit" value="Get" />
+        </h3>
+        }
+        <div class="imageColumns">
+            @foreach (var item in Model)
+            {
+                if (!string.IsNullOrEmpty(item.MediaUrl))
+                {
+                <div class="mediaDiv">
+                    <img src="@Url.Content(@item.MediaUrl)" 
+                        class="mediaImage"
+                        alt="@item.Tweet" title="@item.Tweet"/>
+                </div>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>

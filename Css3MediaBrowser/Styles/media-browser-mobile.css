@@ -1,0 +1,24 @@
+﻿.imageColumns {
+    margin: 0px;
+}
+
+.mediaImage {
+    max-width: 85%;
+    max-height: 100px;
+}
+
+.mediaDiv {
+    float: left;
+    width: 156px;
+    margin: 1px;
+    height: 100px;
+    border: 1px solid #7ba9ca;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Segoe UI';
+    font-size: 0.6em;
+}
